@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tencent.live">
+
+    <application>
+        <activity android:name=".CDNLivePlayerActivity"></activity>
+        <activity android:name=".LiveRoomListActivity" />
+        <activity android:name=".LivePushActivity" />
+        <activity android:name=".LivePlayActivity" />
+        <activity android:name=".LiveBaseActivity" />
+    </application>
+
+</manifest>

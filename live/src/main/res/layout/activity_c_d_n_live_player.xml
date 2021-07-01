@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bkg"
+    android:orientation="vertical"
+    tools:context=".CDNLivePlayerActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp">
+
+        <com.tencent.rtmp.ui.TXCloudVideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/play_start" />
+
+
+            <Button
+                android:id="@+id/btnLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/log_show" />
+
+
+
+            <Button
+                android:id="@+id/btnHWDecode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/quick" />
+
+
+
+            <Button
+                android:id="@+id/btnOrientation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/landscape" />
+
+
+
+            <Button
+                android:id="@+id/btnRenderMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/fill_mode" />
+
+
+            <Button
+                android:id="@+id/btnCacheStrategy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cache_time" />
+
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/loadingImageView"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:src="@drawable/loading_animation"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:id="@+id/layoutCacheStrategy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:text="缓存策略"
+                android:textColor="#ff888888"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <RadioButton
+                    android:id="@+id/radio_btn_fast"
+                    style="@style/RadiobuttonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@drawable/resolution_radio"
+                    android:tag="1"
+                    android:text="极速"
+                    android:textColor="@color/text_radio_color" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn_smooth"
+                    style="@style/RadiobuttonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/resolution_radio"
+                    android:tag="2"
+                    android:text="流畅"
+                    android:textColor="@color/text_radio_color" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn_auto"
+                    style="@style/RadiobuttonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/resolution_radio"
+                    android:checked="true"
+                    android:tag="3"
+                    android:text="自动"
+                    android:textColor="@color/text_radio_color" />
+            </RadioGroup>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="41dp">
+
+            <LinearLayout
+                android:id="@+id/back_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:src="@drawable/btn_back_gray" />
+
+                <TextView
+                    android:id="@+id/back_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center_vertical"
+                    android:text="返回"
+                    android:textColor="#ffffff"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="标题"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/webrtc_link_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:background="@color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/question_link" />
+        </FrameLayout>
+
+
+        <EditText
+            android:id="@+id/roomid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginRight="12dp"
+            android:visibility="gone"
+            android:background="@drawable/input_box"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:singleLine="true"
+            android:textColorHint="#3f000000" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

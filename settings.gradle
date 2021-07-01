@@ -1,0 +1,4 @@
+include ':live'
+include ':debug'
+include ':app'
+rootProject.name = "TestMixDemo"
